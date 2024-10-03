@@ -14,13 +14,14 @@ string tempUser;
 string tempPass;
 int choice=1;
 
-class myclass{
+class Myclass{
   public:
   string passCheck(string tempPass){
     bool checkUpper=false;
     bool checkLower=false;
     bool checkSpcChar=false;
     bool checkNum=false;
+    
     for(char c:tempPass){
       for(auto j:upper){
         if(c==j){
