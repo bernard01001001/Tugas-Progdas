@@ -54,20 +54,18 @@ class myclass{
     }
 
   }
-  void login(string tempUser, string tempPass){
+};
+void login(string tempUser, string tempPass){
     for(int i=0; i<username.size();i++){
       if(tempPass==password[i] && tempUser==username[i]){
         cout<<"logged in successfully"<<endl;
         break;
-        continue;
       }
       else{
         cout<<"login invalid"<<endl;
       }
     }
-  }
-
-};
+}
 int main(){
   myclass obj;
   while(choice<=2 && choice>=1){
@@ -89,8 +87,9 @@ int main(){
         cout<<obj.passCheck(tempPass)<<endl;
       }
       else if(choice == 2){
-        obj.login(tempUser, tempPass);
+        login(tempUser, tempPass);
       }
     }
   }
+  return 0;
 }
