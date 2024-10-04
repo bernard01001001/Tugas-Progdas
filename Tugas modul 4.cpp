@@ -26,28 +26,12 @@ class Myclass{
     bool checkNum=false;
     
     for(char c:tempPass){
-      for(auto j:upper){
-        if(c==j){
-          checkUpper=true;
-        }
-      }
-      for(auto j:lower){
-        if(c==j){
-          checkLower=true;
-        }
-      }
-      for(auto j:spcChar){
-        if(c==j){
-          checkSpcChar=true;
-        }
-      }
-      for(auto j:num){
-        if(c==j){
-          checkNum=true;
-        }
-      }
-      
+      if (strchr (upper, c)) checkUpper = true;
+      if (strchr (lower, c)) checkLower = true;
+      if (strchr (spcChar, c)) checkSpcChar = true;
+      if (strchr (num, c)) checkNum = true;
     }
+    
     if(checkUpper==true && checkLower==true && checkSpcChar==true && checkNum==true){
       username.push_back(tempUser);
       password.push_back(tempPass);
