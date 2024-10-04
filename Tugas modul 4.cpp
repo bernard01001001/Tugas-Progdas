@@ -32,7 +32,7 @@ class Myclass{
       if (strchr (num, c)) checkNum = true;
     }
     
-    if(checkUpper==true && checkLower==true && checkSpcChar==true && checkNum==true){
+    if(checkUpper && checkLower && checkSpcChar==true && checkNum) {
       username.push_back(tempUser);
       password.push_back(tempPass);
       return "registered successfully!";
