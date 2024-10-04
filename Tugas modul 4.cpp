@@ -72,17 +72,34 @@ void login(string tempUser, string tempPass){
 }
 int main(){
   Myclass obj;
-  while(choice<=2 && choice>=1){
-    cout<<"1. register"<<endl;
-    cout<<"2. login"<<endl;
-    cout<<"3. exit"<<endl;
-    cin>>choice;
-    
-    if(choice<=2 && choice>=1){
-      cout<<"username: "<<endl;
-      cin>>tempUser;
-      cout<<"password: "<<endl;
-      cin>>tempPass;
+
+  while (true) {
+    cout << "1. register" << endl;
+    cout << "2. login" << endl;
+    cout << "3. exit" << endl;
+    cin >> choice;
+
+    if (choice == 3) {
+      break;
+    }  
+
+    if (choice == 1 || choice == 2) {
+      cout << "username: " << endl;
+      cin >> tempUser;
+
+      if (tempUser.empty()) {
+        cout << "username cannot be empty" << endl;
+        continue;
+      }
+
+      cout << "password: " << endl;
+      cin >> tempPass;
+
+      if (tempUser.empty()) {
+        cout << "password cannot be empty" << endl;
+        continue;
+      }  
+
       if(choice == 1){
         while(obj.passCheck(tempPass)=="password not strong enough"){
           cout<< obj.passCheck(tempPass)<<endl;
