@@ -44,15 +44,18 @@ class Myclass{
   }
 };
 void login(string tempUser, string tempPass){
+  bool loginSuccess = false;
+  
     for(int i=0; i<username.size();i++){
       if(tempPass==password[i] && tempUser==username[i]){
         cout<<"logged in successfully"<<endl;
+        loginSuccess = true;
         break;
       }
-      else{
-        cout<<"login invalid"<<endl;
-      }
     }
+     if (!loginSuccess) {
+        cout << "login invalid"<<endl;
+     }
 }
 int main(){
   Myclass obj;
